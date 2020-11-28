@@ -27,9 +27,9 @@ The objective of this function is to register an uniquely identifiable contract 
 | Attribute Name | Attribute description |
 | ---------- | ---------- |
 | contracttemplateid | Unique Identifier of the Contract Template used by the registered contract |
-| contractparameter | Contract parameter |
-| contractstate | State of the contract |
-| contractowner | Owner of the contract |
+| contractParameter | Contract parameter |
+| contractState | State of the contract |
+| ContractOwner  | Owner of the contract |
 
 API invocation example:
 
@@ -47,8 +47,38 @@ Result:
 ```
 
 ### FUN05: appendContract
+
+TBD
+
 ### FUN06: signContract
+
+TBD
+
 ### FUN07: changeOwner
+
+The objective of this function is to change the ownership of the owner of a contract in Venteamer platform. This event takes place when a contract draft proposed by one party is transfered for consideration to another party:
+
+| Attribute Name | Attribute description |
+| ---------- | ---------- |
+| ContractId | Unique Identifier of the Contract |
+| ContractOwner  | Owner of the contract |
+
+API invocation example:
+
+```
+    curl -s -X POST \
+-H 'Content-type: application/json' \
+-d '{"key":"DOC1","newOwner":"Maciej"}' \
+http://159.122.179.244:30003/changeOwner
+```
+
+Result:
+
+```
+{"msg":"changeOwner Transaction has been submitted"}%
+```
+
+
 ### FUN08: queryContract
 ### FUN09: queryContracts
 

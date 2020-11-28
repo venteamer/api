@@ -78,9 +78,42 @@ Result:
 {"msg":"changeOwner Transaction has been submitted"}%
 ```
 
-
 ### FUN08: queryContract
+
+The objective of this function is to check the status of a contract called by its unique identifier.
+
+| Attribute Name | Attribute description |
+| ---------- | ---------- |
+| ContractId | Unique Identifier of the Contract |
+
+API invocation example:
+
+```
+curl -s -X GET -H 'Content-type: application/json' http://159.122.179.244:30003/queryContract?key=DOC0
+```
+
+Result:
+
+```
+{"contractowner":"User1","contractparameter":"1000","contractstate":"ACTIVE","contracttemplateid":"1234567890","docType":"doc"}%
+```
+
 ### FUN09: queryContracts
+
+The objective of this function is to check the status of all contracts registered in Venteamer.
+
+API invocation example:
+
+```
+curl -s -X GET -H 'Content-type: application/json' http://159.122.179.244:30003/queryContracts
+```
+
+Result:
+
+```
+[{"Key":"DOC0","Record":{"contractowner":"User1","contractparameter":"1000","contractstate":"ACTIVE","contracttemplateid":"1234567890","docType":"doc"}},{"Key":"DOC1","Record":{"contractowner":"Maciej","contractparameter":"1000","contractstate":"ACTIVE","contracttemplateid":"TPL01","docType":"doc"}},{"Key":"DOC2","Record":{"contractowner":"Maciej Jedrzejczyk","contractparameter":"1000","contractstate":"ACTIVE","contracttemplateid":"TPL01","docType":"doc"}},{"Key":"DOC3","Record":{"contractowner":"Maciej Jedrzejczyk","contractparameter":"1000","contractstate":"ACTIVE","contracttemplateid":"TPL01","docType":"doc"}}]%
+```
+
 
 ## Venteamer ledger APIs
 
